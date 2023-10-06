@@ -7,8 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.pictorialapp.models.userList
-import com.example.pictorialapp.ui.components.ProminentImageItem
+import com.example.pictorialapp.ui.screens.DiscoverScreen
 import com.example.pictorialapp.ui.theme.PictorialAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ProminentImageItem(user = userList.first())
+                    DiscoverScreen()
                 }
             }
         }
