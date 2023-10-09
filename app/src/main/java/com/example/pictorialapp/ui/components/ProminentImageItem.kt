@@ -31,7 +31,7 @@ import com.example.pictorialapp.models.userList
  */
 
 @Composable
-fun ProminentImageItem(modifier: Modifier = Modifier, user: User) {
+fun ProminentImageItem(modifier: Modifier = Modifier, user: User, header: String) {
     Column(modifier = modifier) {
         Image(
             modifier = Modifier.size(343.dp),
@@ -82,5 +82,5 @@ fun ProminentImageItem(modifier: Modifier = Modifier, user: User) {
 @Preview(showBackground = true)
 @Composable
 fun ProminentImageItemPreview() {
-    ProminentImageItem(user = userList.first())
+    ProminentImageItem(header = "What's New Today", user = userList.first())
 }
