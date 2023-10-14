@@ -55,7 +55,10 @@ fun WhatsNew(
     }
 }
 
+@Composable
+fun Browse(){
 
+}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
