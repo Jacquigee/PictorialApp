@@ -12,7 +12,7 @@ import com.example.pictorialapp.R
  */
 data class Images(
     @DrawableRes val image: Int
-){}
+)
 val photos = listOf(
     Images(R.drawable.rectangle_2),
     Images(R.drawable.rectangle_2_3),

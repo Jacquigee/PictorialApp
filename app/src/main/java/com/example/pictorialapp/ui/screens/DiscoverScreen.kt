@@ -6,14 +6,20 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.pictorialapp.models.Images
 import com.example.pictorialapp.models.User
+import com.example.pictorialapp.models.photos
 import com.example.pictorialapp.models.userList
+import com.example.pictorialapp.ui.components.BrowseImage
 import com.example.pictorialapp.ui.components.ProminentImageItem
 
 /**
@@ -33,6 +39,7 @@ fun DiscoverScreen( modifier: Modifier = Modifier) {
         .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(24.dp)) {
         WhatsNew(userList = userList)
+        Browse(photos = photos)
     }
 }
 @Composable
@@ -56,8 +63,16 @@ fun WhatsNew(
 }
 
 @Composable
-fun Browse(){
+fun Browse(
+    modifier: Modifier = Modifier,
+    photos: List<Images>
+) {
+    LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(2)) {
+        items(photos) { Images ->
+            BrowseImage(images = Images)
 
+        }
+    }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
