@@ -3,6 +3,7 @@ package com.example.pictorialapp.ui.screens
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -35,6 +36,7 @@ fun DiscoverScreen( modifier: Modifier = Modifier) {
 
 
     Column( modifier = modifier
+        .fillMaxSize()
         .padding(vertical = 48.dp)
         .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(24.dp)) {
@@ -67,7 +69,7 @@ fun Browse(
     modifier: Modifier = Modifier,
     photos: List<Images>
 ) {
-    LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(2)) {
+    LazyVerticalStaggeredGrid(modifier = modifier, columns = StaggeredGridCells.Fixed(2)) {
         items(photos) { Images ->
             BrowseImage(images = Images)
 
