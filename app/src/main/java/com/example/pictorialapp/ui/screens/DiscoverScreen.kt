@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -69,9 +70,12 @@ fun Browse(
     modifier: Modifier = Modifier,
     photos: List<Images>
 ) {
-    LazyVerticalStaggeredGrid(modifier = modifier, columns = StaggeredGridCells.Fixed(2)) {
+    LazyVerticalStaggeredGrid(modifier = modifier.height(1000.dp), columns = StaggeredGridCells.Fixed(2)) {
         items(photos) { Images ->
-            BrowseImage(images = Images)
+            BrowseImage(
+                header = "Browse All",
+                images = Images
+            )
 
         }
     }
