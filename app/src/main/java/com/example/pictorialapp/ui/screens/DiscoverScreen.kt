@@ -36,7 +36,7 @@ import com.example.pictorialapp.ui.components.ProminentImageItem
 fun DiscoverScreen( modifier: Modifier = Modifier) {
 
 
-    Column( modifier = modifier
+   Column( modifier = modifier
         .fillMaxSize()
         .padding(vertical = 48.dp)
         .verticalScroll(rememberScrollState()),
