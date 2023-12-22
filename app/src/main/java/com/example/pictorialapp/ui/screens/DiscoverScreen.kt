@@ -13,16 +13,19 @@ import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.pictorialapp.models.Images
 import com.example.pictorialapp.models.User
 import com.example.pictorialapp.models.photos
 import com.example.pictorialapp.models.userList
 import com.example.pictorialapp.ui.components.BrowseImage
 import com.example.pictorialapp.ui.components.ProminentImageItem
+import com.example.pictorialapp.ui.theme.fontFamily
 
 /**
  * PROJECT NAME: Pictorial App
@@ -37,9 +40,9 @@ fun DiscoverScreen( modifier: Modifier = Modifier) {
 
 
    Column( modifier = modifier
-        .fillMaxSize()
-        .padding(vertical = 48.dp)
-        .verticalScroll(rememberScrollState()),
+       .fillMaxSize()
+       .padding(vertical = 48.dp)
+       .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(24.dp)) {
         WhatsNew(userList = userList)
         Browse(photos = photos)
@@ -49,13 +52,14 @@ fun DiscoverScreen( modifier: Modifier = Modifier) {
 fun WhatsNew(
     modifier: Modifier = Modifier,
     userList: List<User>
-
-    ){
+){
+    Text(fontFamily = fontFamily, text = "Discover", fontSize = 30.sp, )
     LazyRow(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+
         items(userList) { User ->
             ProminentImageItem(
                 header = "What's New Today",

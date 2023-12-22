@@ -17,7 +17,7 @@ val provider = GoogleFont.Provider(
 )
 
 
-val fontName = GoogleFont("comfortaa, roboto")
+val fontName = GoogleFont("Comfortaa")
 
 val fontFamily = FontFamily(
     Font(googleFont = fontName, fontProvider = provider)
